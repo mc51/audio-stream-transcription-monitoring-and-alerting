@@ -1,6 +1,6 @@
 ## What?
 
-Transcribe an audio-stream in almost real time using OpenAI-Whisper. Monitor it for specific terms in the transcribed text using fuzzy-matching. Trigger an alarm via Signal messenger when your terms are mentioned.
+Transcribe an audio-stream in almost real time using [OpenAI-Whisper](https://github.com/openai/whisper). Monitor it for specific terms in the transcribed text using fuzzy-matching. Trigger an alarm via Signal messenger when your terms are mentioned.
 
 ## How?
 
@@ -8,7 +8,7 @@ Run `pip install -r requirements.txt` to resolve dependencies.
 
 Consists of three parts:
 1. `save_stream.py` saves .mp3 files in chunks of 30sec from an audio stream
-2. `transcribe.py` transcribes each incoming audio chunk using OpenAI-Whisper. Then, it uses fuzzy matching to monitor the spoken word for specific terms. On match, it calls `msg_group_via_signal.sh`
+2. `transcribe.py` transcribes each incoming audio chunk using [OpenAI-Whisper](https://github.com/openai/whisper). Then, it uses fuzzy matching to monitor the spoken word for specific terms. On match, it calls `msg_group_via_signal.sh`
 3. `msg_group_via_signal.sh` relays the alarm message to the [signal-cli](https://github.com/AsamK/signal-cli) tool which messages a group on the Signal messenger
 
 Take a look at the files to configure them. For example, you can set durations during which the stream is monitored.
